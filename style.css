@@ -171,6 +171,13 @@ svg {
   text-decoration: none;
 }
 
+/* add an eye sign in password */
+
+.ri-eye-fill,
+.ri-eye-off-fill {
+  cursor: pointer;
+}
+
 /* success msg  */
 
 .none {
