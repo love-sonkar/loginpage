@@ -9,6 +9,13 @@ let btn = document.querySelector(".submit");
 let userid = "love";
 let userpass = "123456";
 
+// making variable for the parent of input
+
+let userinput = document.querySelector(".userinput");
+let passinput = document.querySelector(".passinput");
+let usericon = document.querySelector(".ri-user-fill");
+let passicon = document.querySelector(".ri-lock-fill");
+
 // success box code start
 
 let msg = document.querySelector(".success-msg");
@@ -49,18 +56,10 @@ btn.addEventListener("click", (e) => {
   e.preventDefault();
   if ((valuser === "" && valpass === "") || logIn()) {
     errorColor();
-  } else {
   }
-
   // making function for error code
 
   function errorColor() {
-    let userinput = document.querySelector(".userinput");
-    let passinput = document.querySelector(".passinput");
-    let usericon = document.querySelector(".ri-user-fill");
-    let passicon = document.querySelector(".ri-lock-fill");
-    let btn = document.querySelector(".submit");
-
     userinput.style.borderColor = "red";
     passinput.style.borderColor = "red";
     btn.style.borderColor = "red";
@@ -78,9 +77,23 @@ btn.addEventListener("click", (e) => {
   function logIn() {
     if (valuser != userid || valpass != userpass) {
       errorColor();
-      alert("please fill all input");
     } else {
       msg.style.display = "grid";
     }
+
+    // function for change color if username is right
+
+    function rightUsername() {
+      if (valuser === userid) {
+        userinput.style.borderColor = "#5ecb82";
+        usericon.style.color = "#5ecb82";
+      } else if (valpass === userpass) {
+        passinput.style.borderColor = "#5ecb82";
+        passicon.style.color = "#5ecb82";
+        eyeOpen.style.color = "#5ecb82";
+        eyeClose.style.color = "#5ecb82";
+      }
+    }
+    rightUsername();
   }
 });
