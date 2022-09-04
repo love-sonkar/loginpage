@@ -68,6 +68,9 @@ btn.addEventListener("click", (e) => {
     btn.style.color = "white";
     usericon.style.color = "red";
     passicon.style.color = "red";
+
+    eyeOpen.style.color = "red";
+    eyeClose.style.color = "red";
   }
 
   // end function here
